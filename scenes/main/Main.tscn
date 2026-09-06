@@ -1,0 +1,21 @@
+[gd_scene load_steps=1 format=3]
+
+[node name="Main" type="Node2D"]
+
+[node name="BackgroundLayers" type="ParallaxBackground" parent="."]
+
+[node name="Mountain" type="ParallaxLayer" parent="BackgroundLayers"]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="BackBG" type="ParallaxLayer" parent="BackgroundLayers"]
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="BG" type="ParallaxLayer" parent="BackgroundLayers"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="CharactersAndUI" type="Node2D" parent="."]
+
+[node name="ForegroundLayers" type="ParallaxBackground" parent="."]
+
+[node name="Foreground" type="ParallaxLayer" parent="ForegroundLayers"]
+motion_scale = Vector2(1.2, 1.2)

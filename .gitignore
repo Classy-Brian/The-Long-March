@@ -1,0 +1,14 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# OS-specific junk files
+.DS_Store
+Thumbs.db
+
+# Editor/tooling
+*.tmp
+*.log
+
+# Local-only project knowledge/design docs - not pushed to GitHub
+Knowledge/
