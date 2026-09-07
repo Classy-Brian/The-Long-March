@@ -5,7 +5,6 @@ class_name RelentlessPace
 ## out `target_text` before `time_limit` runs out. Falling behind (a wrong
 ## keystroke) drains the main soldier's Stamina. This is a scaffold -
 ## tuning (drain rate, time limit, difficulty scaling) is not finalized;
-## see Knowledge/game-design-one-pager.md.
 
 signal segment_completed(success: bool)
 

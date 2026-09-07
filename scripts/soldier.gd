@@ -3,8 +3,7 @@ class_name Soldier
 
 ## Represents a single soldier in the player's party.
 ## Stats are clamped 0-100. Hitting 0 on Stamina or Hunger triggers a death event.
-## Morale affects escape odds and event outcomes (exact formulas TBD -
-## see Knowledge/game-design-one-pager.md).
+## Morale affects decision point outcomes (exact formulas TBD)
 
 signal died(cause: String)
 
@@ -19,7 +18,7 @@ signal died(cause: String)
 @export var death_cause: String = ""
 
 func apply_stat_delta(stat: String, amount: float) -> void:
-	if not is_alive:
+	if not is_alive: # Dead soldiers don't take further stat changes
 		return
 	match stat:
 		"stamina":
@@ -33,6 +32,7 @@ func apply_stat_delta(stat: String, amount: float) -> void:
 	_check_for_death()
 
 func _check_for_death() -> void:
+	# Stamina checked first - if both hit 0 simultaneously, stamin's cause wins
 	if not is_alive:
 		return
 	if stamina <= 0.0:
