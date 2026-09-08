@@ -3,8 +3,7 @@ extends Node
 ## Party manager - registered as an autoload singleton named "Party"
 ## (see [autoload] in project.godot). Holds the 3 soldiers: one main
 ## player-controlled soldier plus two background/support soldiers whose
-## stats are still tracked. Exact background-soldier mechanics are TBD -
-## see Knowledge/game-design-one-pager.md in the project root.
+## stats are still tracked. Exact background-soldier mechanics are TBD
 
 signal soldier_died(soldier: Soldier)
 signal party_wiped
@@ -24,7 +23,11 @@ func _make_soldier(soldier_name: String, is_main: bool) -> Soldier:
 	var s := Soldier.new()
 	s.soldier_name = soldier_name
 	s.is_main = is_main
+	
+	# Lamda captures 's' so _on_soldier_died knows which soldier died
+	# The signal itself only passes 'cause'
 	s.died.connect(func(cause: String): _on_soldier_died(s, cause))
+	
 	return s
 
 func get_main_soldier() -> Soldier:
