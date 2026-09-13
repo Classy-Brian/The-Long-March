@@ -10,5 +10,8 @@ Thumbs.db
 *.tmp
 *.log
 
+# Exported builds
+builds/
+
 # Local-only project knowledge/design docs - not pushed to GitHub
 Knowledge/
