@@ -2,29 +2,32 @@ extends Resource
 class_name Soldier
 
 ## Represents a single soldier in the player's party.
-## Stats are clamped 0-100. Hitting 0 on Stamina or Hunger triggers a death event.
-## Morale affects decision point outcomes (exact formulas TBD)
+## Stats are clamped 0-100. Hitting 0 on Health or Hydration triggers a death event.
+## Morale affects decision point outcomes (exact formulas TBD).
+## Stat structure finalized 2026-09-13: Health (renamed from Stamina, broader
+## scope), Hydration (new), Morale. Hunger was removed entirely, not folded
+## into anything else.
 
 signal died(cause: String)
 
 @export var soldier_name: String = ""
 @export var is_main: bool = false ## True for the one player-controlled soldier.
 
-@export_range(0, 100) var stamina: float = 100.0
-@export_range(0, 100) var hunger: float = 100.0
+@export_range(0, 100) var health: float = 100.0
+@export_range(0, 100) var hydration: float = 100.0
 @export_range(0, 100) var morale: float = 100.0
 
 @export var is_alive: bool = true
 @export var death_cause: String = ""
 
 func apply_stat_delta(stat: String, amount: float) -> void:
-	if not is_alive: # Dead soldiers don't take further stat changes
+	if not is_alive:
 		return
 	match stat:
-		"stamina":
-			stamina = clamp(stamina + amount, 0.0, 100.0)
-		"hunger":
-			hunger = clamp(hunger + amount, 0.0, 100.0)
+		"health":
+			health = clamp(health + amount, 0.0, 100.0)
+		"hydration":
+			hydration = clamp(hydration + amount, 0.0, 100.0)
 		"morale":
 			morale = clamp(morale + amount, 0.0, 100.0)
 		_:
@@ -32,13 +35,16 @@ func apply_stat_delta(stat: String, amount: float) -> void:
 	_check_for_death()
 
 func _check_for_death() -> void:
-	# Stamina checked first - if both hit 0 simultaneously, stamin's cause wins
 	if not is_alive:
 		return
-	if stamina <= 0.0:
+	# health checked first — if both hit 0 simultaneously, health's cause wins.
+	# TODO: once DecisionEvent can reduce Health for other reasons (Injuries,
+	# Sickness, etc.), this cause message will need to become dynamic instead
+	# of hardcoded to the Relentless Pace exhaustion case.
+	if health <= 0.0:
 		_die("Shot/beaten for falling behind")
-	elif hunger <= 0.0:
-		_die("Starvation")
+	elif hydration <= 0.0:
+		_die("Dehydration")
 
 func _die(cause: String) -> void:
 	is_alive = false
