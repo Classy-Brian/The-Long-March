@@ -1,21 +1,27 @@
-[gd_scene load_steps=1 format=3]
+[gd_scene format=3 uid="uid://dwhfje6geg76v"]
 
-[node name="Main" type="Node2D"]
+[ext_resource type="Script" uid="uid://bvg5hy4d24oti" path="res://scripts/main.gd" id="1_u1xfj"]
 
-[node name="BackgroundLayers" type="ParallaxBackground" parent="."]
+[node name="Main" type="Node2D" unique_id=969177405]
+script = ExtResource("1_u1xfj")
 
-[node name="Mountain" type="ParallaxLayer" parent="BackgroundLayers"]
+[node name="BackgroundLayers" type="ParallaxBackground" parent="." unique_id=800524058]
+
+[node name="Mountain" type="ParallaxLayer" parent="BackgroundLayers" unique_id=477459758]
 motion_scale = Vector2(0.1, 0.1)
 
-[node name="BackBG" type="ParallaxLayer" parent="BackgroundLayers"]
+[node name="BackBG" type="ParallaxLayer" parent="BackgroundLayers" unique_id=1571452688]
 motion_scale = Vector2(0.3, 0.3)
 
-[node name="BG" type="ParallaxLayer" parent="BackgroundLayers"]
+[node name="BG" type="ParallaxLayer" parent="BackgroundLayers" unique_id=616505978]
 motion_scale = Vector2(0.5, 0.5)
 
-[node name="CharactersAndUI" type="Node2D" parent="."]
+[node name="CharactersAndUI" type="Node2D" parent="." unique_id=608258958]
 
-[node name="ForegroundLayers" type="ParallaxBackground" parent="."]
+[node name="ForegroundLayers" type="ParallaxBackground" parent="." unique_id=1046821288]
 
-[node name="Foreground" type="ParallaxLayer" parent="ForegroundLayers"]
+[node name="Foreground" type="ParallaxLayer" parent="ForegroundLayers" unique_id=1973415347]
 motion_scale = Vector2(1.2, 1.2)
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=87576567]
+unique_name_in_owner = true
