@@ -39,9 +39,9 @@ func _on_choice_b_button_pressed() -> void:
 
 func _apply(health: float, hydration: float, morale: float) -> void:
 	var soldier: Soldier = Party.get_main_soldier()
-	soldier.apply_stat_delta("health", health)
-	soldier.apply_stat_delta("hydration", hydration)
-	soldier.apply_stat_delta("morale", morale)
+	soldier.apply_stat_delta("health", health, event.death_cause)
+	soldier.apply_stat_delta("hydration", hydration, event.death_cause)
+	soldier.apply_stat_delta("morale", morale, event.death_cause)
 	print("  Health: ", soldier.health, "  Hydration: ", soldier.hydration, "  Morale: ", soldier.morale)
 
 func _roll(chance: float) -> bool:

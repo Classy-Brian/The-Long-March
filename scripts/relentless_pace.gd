@@ -43,7 +43,7 @@ func _on_text_changed(new_text: String) -> void:
 func _apply_mistake_penalty() -> void:
 	var main: Soldier = Party.get_main_soldier()
 	if main:
-		main.apply_stat_delta("health", -health_penalty_per_mistake)
+		main.apply_stat_delta("health", -health_penalty_per_mistake, "Beaten for falling behind.")
 
 func _finish(success: bool) -> void:
 	_finished = true

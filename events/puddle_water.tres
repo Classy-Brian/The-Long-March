@@ -5,8 +5,9 @@
 [resource]
 script = ExtResource("1_ndcaj")
 prompt_text = "A puddle sits in the road ahead, skimmed with insects and animal filth. It is the only water anyone has seen since morning."
+death_cause = "Dysentery, from the water in the road."
 a_text = "Drink from the puddle."
-a_success_chance = 55.0
+a_success_chance = 60.0
 a_success_result = "It tastes of mud and rot, but it is water. Your throat loosens."
 a_success_hydration = 25.0
 a_success_morale = -5.0

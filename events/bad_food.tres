@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_3hg6l")
 prompt_text = "Rice is passed down the line from a pot crawling with maggots. It is the first food anyone has been offered in two days."
+death_cause = "Sickness, from the rice."
 a_text = "Eat it."
 a_success_chance = 60.0
 a_success_result = "It is sour and wrong, but it stays down."

@@ -20,7 +20,9 @@ signal died(cause: String)
 @export var is_alive: bool = true
 @export var death_cause: String = ""
 
-func apply_stat_delta(stat: String, amount: float) -> void:
+var _pending_cause: String = ""
+
+func apply_stat_delta(stat: String, amount: float, cause: String = "") -> void:
 	if not is_alive:
 		return
 	match stat:
@@ -32,18 +34,18 @@ func apply_stat_delta(stat: String, amount: float) -> void:
 			morale = clamp(morale + amount, 0.0, 100.0)
 		_:
 			push_warning("Soldier.apply_stat_delta: unknown stat '%s'" % stat)
+	_pending_cause = cause
 	emit_changed()
 	_check_for_death()
 
 func _check_for_death() -> void:
 	if not is_alive:
 		return
-	# health checked first — if both hit 0 simultaneously, health's cause wins.
-	# TODO: once DecisionEvent can reduce Health for other reasons (Injuries,
-	# Sickness, etc.), this cause message will need to become dynamic instead
-	# of hardcoded to the Relentless Pace exhaustion case.
 	if health <= 0.0:
-		_die("Shot/beaten for falling behind")
+		if _pending_cause != "":
+			_die(_pending_cause)
+		else:
+			_die("Collapsed on the road")
 	elif hydration <= 0.0:
 		_die("Dehydration")
 

@@ -5,6 +5,7 @@ class_name DecisionEvent
 ## using this as its blueprint - same pattern as Soldier.
 
 @export_multiline var prompt_text: String = ""
+@export var death_cause: String = ""
 
 @export_group("Choice A")
 @export var a_text: String = ""
