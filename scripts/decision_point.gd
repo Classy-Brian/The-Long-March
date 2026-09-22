@@ -1,11 +1,14 @@
 extends Control
 class_name DecisionPoint
 
+signal decision_made
+
 @export var event: DecisionEvent
 
 @onready var prompt_label: Label = %PromptLabel
 @onready var choice_a_button: Button = %ChoiceAButton
 @onready var choice_b_button: Button = %ChoiceBButton
+@onready var continue_button: Button = %ContinueButton
 
 func _ready() -> void:
 	if event == null:
@@ -16,21 +19,22 @@ func _ready() -> void:
 	choice_b_button.text = event.b_text
 	choice_a_button.pressed.connect(_on_choice_a_button_pressed)
 	choice_b_button.pressed.connect(_on_choice_b_button_pressed)
+	continue_button.pressed.connect(_on_continue_button_pressed)
 
 func _on_choice_a_button_pressed() -> void:
 	if _roll(event.a_success_chance):
-		print(event.a_success_result)
+		_show_result(event.a_success_result)
 		_apply(event.a_success_health, event.a_success_hydration, event.a_success_morale)
 	else:
-		print(event.a_failure_result)
+		_show_result(event.a_failure_result)
 		_apply(event.a_failure_health, event.a_failure_hydration, event.a_failure_morale)
 
 func _on_choice_b_button_pressed() -> void:
 	if _roll(event.b_success_chance):
-		print(event.b_success_result)
+		_show_result(event.b_success_result)
 		_apply(event.b_success_health, event.b_success_hydration, event.b_success_morale)
 	else:
-		print(event.b_failure_result)
+		_show_result(event.b_failure_result)
 		_apply(event.b_failure_health, event.b_failure_hydration, event.b_failure_morale)
 
 func _apply(health: float, hydration: float, morale: float) -> void:
@@ -42,3 +46,12 @@ func _apply(health: float, hydration: float, morale: float) -> void:
 
 func _roll(chance: float) -> bool:
 	return randf() * 100.0 < chance
+
+func _show_result(text: String) -> void:
+	prompt_label.text = text
+	choice_a_button.hide()
+	choice_b_button.hide()
+	continue_button.show()
+
+func _on_continue_button_pressed() -> void:
+	decision_made.emit()

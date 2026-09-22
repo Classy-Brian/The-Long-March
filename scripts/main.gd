@@ -1,7 +1,8 @@
 extends Node2D
 
 const PACE_SCENE: PackedScene = preload("res://scenes/relentless_pace/RelentlessPace.tscn")
-const DECISION_SCENE: PackedScene = preload("res://scenes/decision_point/PlaceholderDecision.tscn")
+const DECISION_SCENE: PackedScene = preload("res://scenes/decision_point/DecisionPoint.tscn")
+const TEST_EVENT: DecisionEvent = preload("res://events/puddle_water.tres")
 
 @onready var ui_layer: CanvasLayer = %UILayer
 
@@ -16,7 +17,8 @@ func _start_pace() -> void:
 	_show_screen(pace)
 
 func _start_decision() -> void:
-	var decision: PlaceholderDecision = DECISION_SCENE.instantiate()
+	var decision: DecisionPoint = DECISION_SCENE.instantiate()
+	decision.event = TEST_EVENT
 	decision.decision_made.connect(_on_decision_made)
 	_show_screen(decision)
 

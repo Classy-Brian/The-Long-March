@@ -47,3 +47,9 @@ text = "Choice A"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Choice B"
+
+[node name="ContinueButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1907367610]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Continue"
