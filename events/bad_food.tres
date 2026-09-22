@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DecisionEvent" format=3 uid="uid://bkcg20xi4fly3"]
+
+[ext_resource type="Script" uid="uid://d33a7xio2g6x8" path="res://scripts/decision_event.gd" id="1_3hg6l"]
+
+[resource]
+script = ExtResource("1_3hg6l")
+prompt_text = "Rice is passed down the line from a pot crawling with maggots. It is the first food anyone has been offered in two days."
+death_cause = "Sickness, from the rice."
+a_text = "Eat it."
+a_success_chance = 60.0
+a_success_result = "It is sour and wrong, but it stays down."
+a_success_morale = -5.0
+a_failure_result = "Within the hour you are doubled over at the roadside."
+a_failure_health = -20.0
+a_failure_hydration = -10.0
+a_failure_morale = -10.0
+b_text = "Pass it on."
+b_success_result = "You hand the bowl back and keep your eyes on the road."
+b_success_morale = -10.0
+metadata/_custom_type_script = "uid://d33a7xio2g6x8"

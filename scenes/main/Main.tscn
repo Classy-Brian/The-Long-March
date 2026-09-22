@@ -1,21 +1,53 @@
-[gd_scene load_steps=1 format=3]
+[gd_scene format=3 uid="uid://dwhfje6geg76v"]
 
-[node name="Main" type="Node2D"]
+[ext_resource type="Script" uid="uid://bvg5hy4d24oti" path="res://scripts/main.gd" id="1_u1xfj"]
+[ext_resource type="Script" uid="uid://d33a7xio2g6x8" path="res://scripts/decision_event.gd" id="2_gyg6b"]
+[ext_resource type="Resource" uid="uid://bu4iqtp4pgl7s" path="res://events/puddle_water.tres" id="3_dc040"]
+[ext_resource type="Resource" uid="uid://bkcg20xi4fly3" path="res://events/bad_food.tres" id="4_1rhdn"]
 
-[node name="BackgroundLayers" type="ParallaxBackground" parent="."]
+[node name="Main" type="Node2D" unique_id=969177405]
+script = ExtResource("1_u1xfj")
+events = Array[ExtResource("2_gyg6b")]([ExtResource("3_dc040"), ExtResource("4_1rhdn")])
+pace_lines = Array[String](["Keep moving. Do not fall behind.", "The man ahead of you stumbles. Nobody stops.", "Dust. Sun. The sound of boots. Keep walking."])
 
-[node name="Mountain" type="ParallaxLayer" parent="BackgroundLayers"]
+[node name="BackgroundLayers" type="ParallaxBackground" parent="." unique_id=800524058]
+
+[node name="Mountain" type="ParallaxLayer" parent="BackgroundLayers" unique_id=477459758]
 motion_scale = Vector2(0.1, 0.1)
 
-[node name="BackBG" type="ParallaxLayer" parent="BackgroundLayers"]
+[node name="BackBG" type="ParallaxLayer" parent="BackgroundLayers" unique_id=1571452688]
 motion_scale = Vector2(0.3, 0.3)
 
-[node name="BG" type="ParallaxLayer" parent="BackgroundLayers"]
+[node name="BG" type="ParallaxLayer" parent="BackgroundLayers" unique_id=616505978]
 motion_scale = Vector2(0.5, 0.5)
 
-[node name="CharactersAndUI" type="Node2D" parent="."]
+[node name="CharactersAndUI" type="Node2D" parent="." unique_id=608258958]
 
-[node name="ForegroundLayers" type="ParallaxBackground" parent="."]
+[node name="ForegroundLayers" type="ParallaxBackground" parent="." unique_id=1046821288]
 
-[node name="Foreground" type="ParallaxLayer" parent="ForegroundLayers"]
+[node name="Foreground" type="ParallaxLayer" parent="ForegroundLayers" unique_id=1973415347]
 motion_scale = Vector2(1.2, 1.2)
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=87576567]
+unique_name_in_owner = true
+
+[node name="StatsBar" type="HBoxContainer" parent="UILayer" unique_id=157377064]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/separation = 20
+
+[node name="HealthLabel" type="Label" parent="UILayer/StatsBar" unique_id=1589237977]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Health: 100"
+
+[node name="HydrationLabel" type="Label" parent="UILayer/StatsBar" unique_id=891145366]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Hydration: 100"
+
+[node name="MoraleLabel" type="Label" parent="UILayer/StatsBar" unique_id=610899160]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Morale: 100"

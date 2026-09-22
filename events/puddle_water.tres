@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="DecisionEvent" format=3 uid="uid://bu4iqtp4pgl7s"]
+
+[ext_resource type="Script" uid="uid://d33a7xio2g6x8" path="res://scripts/decision_event.gd" id="1_ndcaj"]
+
+[resource]
+script = ExtResource("1_ndcaj")
+prompt_text = "A puddle sits in the road ahead, skimmed with insects and animal filth. It is the only water anyone has seen since morning."
+death_cause = "Dysentery, from the water in the road."
+a_text = "Drink from the puddle."
+a_success_chance = 60.0
+a_success_result = "It tastes of mud and rot, but it is water. Your throat loosens."
+a_success_hydration = 25.0
+a_success_morale = -5.0
+a_failure_result = "By nightfall your gut twists and will not stop. Dysentery."
+a_failure_health = -30.0
+a_failure_hydration = 15.0
+a_failure_morale = -10.0
+b_text = "Step around it."
+b_success_result = "You walk past. Your tongue is thick with dust."
+b_success_hydration = -5.0
+b_success_morale = -5.0
+metadata/_custom_type_script = "uid://d33a7xio2g6x8"
