@@ -32,6 +32,7 @@ func apply_stat_delta(stat: String, amount: float) -> void:
 			morale = clamp(morale + amount, 0.0, 100.0)
 		_:
 			push_warning("Soldier.apply_stat_delta: unknown stat '%s'" % stat)
+	emit_changed()
 	_check_for_death()
 
 func _check_for_death() -> void:
