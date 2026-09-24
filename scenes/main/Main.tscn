@@ -4,29 +4,48 @@
 [ext_resource type="Script" uid="uid://d33a7xio2g6x8" path="res://scripts/decision_event.gd" id="2_gyg6b"]
 [ext_resource type="Resource" uid="uid://bu4iqtp4pgl7s" path="res://events/puddle_water.tres" id="3_dc040"]
 [ext_resource type="Resource" uid="uid://bkcg20xi4fly3" path="res://events/bad_food.tres" id="4_1rhdn"]
+[ext_resource type="Texture2D" uid="uid://dwj6wqopfj3kj" path="res://assets/backgrounds/backrooms/soild_mountainsky.png" id="5_dc040"]
+[ext_resource type="Texture2D" uid="uid://s64ge6j25pg8" path="res://assets/backgrounds/backrooms/background.png" id="6_1rhdn"]
+[ext_resource type="Texture2D" uid="uid://cgso32u8m2kp2" path="res://assets/backgrounds/backrooms/ground.png" id="7_sjxhf"]
+[ext_resource type="Texture2D" uid="uid://vfxrgc1ckfl2" path="res://assets/backgrounds/backrooms/foreground.png" id="8_ko0rf"]
 
 [node name="Main" type="Node2D" unique_id=969177405]
 script = ExtResource("1_u1xfj")
 events = Array[ExtResource("2_gyg6b")]([ExtResource("3_dc040"), ExtResource("4_1rhdn")])
 pace_lines = Array[String](["Keep moving. Do not fall behind.", "The man ahead of you stumbles. Nobody stops.", "Dust. Sun. The sound of boots. Keep walking."])
 
-[node name="BackgroundLayers" type="ParallaxBackground" parent="." unique_id=800524058]
+[node name="Mountain" type="Parallax2D" parent="." unique_id=272272998]
 
-[node name="Mountain" type="ParallaxLayer" parent="BackgroundLayers" unique_id=477459758]
-motion_scale = Vector2(0.1, 0.1)
+[node name="Sprite2D" type="Sprite2D" parent="Mountain" unique_id=680946806]
+position = Vector2(-320, 0)
+texture = ExtResource("5_dc040")
+centered = false
 
-[node name="BackBG" type="ParallaxLayer" parent="BackgroundLayers" unique_id=1571452688]
-motion_scale = Vector2(0.3, 0.3)
+[node name="BackBG" type="Parallax2D" parent="." unique_id=355245407]
+repeat_size = Vector2(1280, 0)
+autoscroll = Vector2(-12, 0)
 
-[node name="BG" type="ParallaxLayer" parent="BackgroundLayers" unique_id=616505978]
-motion_scale = Vector2(0.5, 0.5)
+[node name="Sprite2D" type="Sprite2D" parent="BackBG" unique_id=815442882]
+texture = ExtResource("6_1rhdn")
+centered = false
+
+[node name="BG" type="Parallax2D" parent="." unique_id=2131159710]
+repeat_size = Vector2(1280, 0)
+autoscroll = Vector2(-20, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BG" unique_id=658009485]
+texture = ExtResource("7_sjxhf")
+centered = false
 
 [node name="CharactersAndUI" type="Node2D" parent="." unique_id=608258958]
 
-[node name="ForegroundLayers" type="ParallaxBackground" parent="." unique_id=1046821288]
+[node name="Foreground" type="Parallax2D" parent="." unique_id=737338901]
+repeat_size = Vector2(1280, 0)
+autoscroll = Vector2(-48, 0)
 
-[node name="Foreground" type="ParallaxLayer" parent="ForegroundLayers" unique_id=1973415347]
-motion_scale = Vector2(1.2, 1.2)
+[node name="Sprite2D" type="Sprite2D" parent="Foreground" unique_id=186148618]
+texture = ExtResource("8_ko0rf")
+centered = false
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=87576567]
 unique_name_in_owner = true
