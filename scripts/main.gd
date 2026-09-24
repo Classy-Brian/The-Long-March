@@ -12,6 +12,7 @@ const END_SCENE: PackedScene = preload("res://scenes/ending/EndScreen.tscn")
 @onready var health_label: Label = %HealthLabel
 @onready var hydration_label: Label = %HydrationLabel
 @onready var morale_label: Label = %MoraleLabel
+@onready var sergeant: AnimatedSprite2D = %Sergeant
 
 var current_scene: Node = null
 var _event_index: int = 0
@@ -61,6 +62,15 @@ func _on_decision_made() -> void:
 		_start_pace()
 		_set_marching(true)
 
+func _set_marching(marching: bool) -> void:
+	for layer in parallax_layers:
+		layer.process_mode = Node.PROCESS_MODE_INHERIT if marching else Node.PROCESS_MODE_DISABLED
+	if marching:
+		sergeant.play("walk")
+	else:
+		sergeant.stop()
+		sergeant.frame = 0
+
 func _end_march() -> void:
 	_show_end("The column halts.", "You are still on your feet when the guards call the end of the day's march.")
 
@@ -84,7 +94,3 @@ func _show_end(title: String, body: String) -> void:
 	ending.body_text = body
 	_set_marching(false)
 	_show_screen(ending)
-
-func _set_marching(marching: bool) -> void:
-	for layer in parallax_layers:
-		layer.process_mode = Node.PROCESS_MODE_INHERIT if marching else Node.PROCESS_MODE_DISABLED
