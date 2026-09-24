@@ -32,6 +32,10 @@ window/size/window_width_override=1280
 window/size/window_height_override=960
 window/stretch/mode="canvas_items"
 
+[gui]
+
+theme/custom="uid://dlamu04ptx62k"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

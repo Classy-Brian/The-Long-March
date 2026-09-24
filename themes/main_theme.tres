@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://dlamu04ptx62k"]
+
+[ext_resource type="FontFile" uid="uid://cbh81jji84xxc" path="res://assets/fonts/Courier_Prime/CourierPrime-Regular.ttf" id="1_rjgu6"]
+
+[resource]
+default_font = ExtResource("1_rjgu6")
+default_font_size = 16
