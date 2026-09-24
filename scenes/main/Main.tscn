@@ -15,6 +15,7 @@ events = Array[ExtResource("2_gyg6b")]([ExtResource("3_dc040"), ExtResource("4_1
 pace_lines = Array[String](["Keep moving. Do not fall behind.", "The man ahead of you stumbles. Nobody stops.", "Dust. Sun. The sound of boots. Keep walking."])
 
 [node name="Mountain" type="Parallax2D" parent="." unique_id=272272998]
+unique_name_in_owner = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Mountain" unique_id=680946806]
 position = Vector2(-320, 0)
@@ -22,6 +23,7 @@ texture = ExtResource("5_dc040")
 centered = false
 
 [node name="BackBG" type="Parallax2D" parent="." unique_id=355245407]
+unique_name_in_owner = true
 repeat_size = Vector2(1280, 0)
 autoscroll = Vector2(-12, 0)
 
@@ -30,6 +32,7 @@ texture = ExtResource("6_1rhdn")
 centered = false
 
 [node name="BG" type="Parallax2D" parent="." unique_id=2131159710]
+unique_name_in_owner = true
 repeat_size = Vector2(1280, 0)
 autoscroll = Vector2(-20, 0)
 
@@ -40,6 +43,7 @@ centered = false
 [node name="CharactersAndUI" type="Node2D" parent="." unique_id=608258958]
 
 [node name="Foreground" type="Parallax2D" parent="." unique_id=737338901]
+unique_name_in_owner = true
 repeat_size = Vector2(1280, 0)
 autoscroll = Vector2(-48, 0)
 

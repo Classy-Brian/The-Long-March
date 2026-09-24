@@ -7,6 +7,7 @@ const END_SCENE: PackedScene = preload("res://scenes/ending/EndScreen.tscn")
 @export var events: Array[DecisionEvent] = []
 @export var pace_lines: Array[String] = []
 
+@onready var parallax_layers: Array[Parallax2D] = [%Mountain, %BackBG, %BG, %Foreground]
 @onready var ui_layer: CanvasLayer = %UILayer
 @onready var health_label: Label = %HealthLabel
 @onready var hydration_label: Label = %HydrationLabel
@@ -21,6 +22,7 @@ func _ready() -> void:
 	Party.soldier_died.connect(_on_soldier_died)
 	_update_stats()
 	_start_pace()
+	_set_marching(true)
 
 func _start_pace() -> void:
 	var pace: RelentlessPace = PACE_SCENE.instantiate()
@@ -47,6 +49,7 @@ func _on_pace_completed(success: bool) -> void:
 		return
 	print("Pace finished. Success: ", success)
 	_start_decision()
+	_set_marching(false)
 
 func _on_decision_made() -> void:
 	if _march_over:
@@ -56,6 +59,7 @@ func _on_decision_made() -> void:
 		_end_march()
 	else:
 		_start_pace()
+		_set_marching(true)
 
 func _end_march() -> void:
 	_show_end("The column halts.", "You are still on your feet when the guards call the end of the day's march.")
@@ -78,4 +82,9 @@ func _show_end(title: String, body: String) -> void:
 	var ending: EndScreen = END_SCENE.instantiate()
 	ending.title_text = title
 	ending.body_text = body
+	_set_marching(false)
 	_show_screen(ending)
+
+func _set_marching(marching: bool) -> void:
+	for layer in parallax_layers:
+		layer.process_mode = Node.PROCESS_MODE_INHERIT if marching else Node.PROCESS_MODE_DISABLED
