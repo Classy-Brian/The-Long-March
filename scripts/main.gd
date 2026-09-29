@@ -12,6 +12,9 @@ const END_SCENE: PackedScene = preload("res://scenes/ending/EndScreen.tscn")
 @onready var health_label: Label = %HealthLabel
 @onready var hydration_label: Label = %HydrationLabel
 @onready var morale_label: Label = %MoraleLabel
+@onready var health_icon: StatIcon = %HealthIcon
+@onready var hydration_icon: StatIcon = %HydrationIcon
+@onready var morale_icon: StatIcon = %MoraleIcon
 @onready var sergeant: AnimatedSprite2D = %Sergeant
 
 var current_scene: Node = null
@@ -76,9 +79,12 @@ func _end_march() -> void:
 
 func _update_stats() -> void:
 	var soldier: Soldier = Party.get_main_soldier()
-	health_label.text = "Health: %d" % soldier.health
-	hydration_label.text = "Hydration: %d" % soldier.hydration
-	morale_label.text = "Morale: %d" % soldier.morale
+	health_label.text = "%d" % soldier.health
+	hydration_label.text = "%d" % soldier.hydration
+	morale_label.text = "%d" % soldier.morale
+	health_icon.show_value(soldier.health)
+	hydration_icon.show_value(soldier.hydration)
+	morale_icon.show_value(soldier.morale)
 
 func _on_soldier_died(soldier: Soldier) -> void:
 	if not soldier.is_main:

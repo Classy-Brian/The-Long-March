@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://x1kkxt3dbax5" path="res://scripts/decision_point.gd" id="1_2jtll"]
 [ext_resource type="Resource" uid="uid://bu4iqtp4pgl7s" path="res://events/puddle_water.tres" id="2_k0y14"]
+[ext_resource type="Texture2D" uid="uid://cx2d1m6mnp1c2" path="res://assets/UI/desicion_backdrop.png" id="3_slab"]
+
+[sub_resource type="AtlasTexture" id="Atlas_card"]
+atlas = ExtResource("3_slab")
+region = Rect2(79, 98, 476, 291)
 
 [node name="DecisionPoint" type="Control" unique_id=1102884430]
 layout_mode = 3
@@ -13,43 +18,56 @@ grow_vertical = 2
 script = ExtResource("1_2jtll")
 event = ExtResource("2_k0y14")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=25711060]
+[node name="Card" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 152.0
+offset_right = 626.0
+offset_bottom = 472.0
+mouse_filter = 2
+texture = SubResource("Atlas_card")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Card" unique_id=25711060]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 26
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 26
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1790729878]
+[node name="VBoxContainer" type="VBoxContainer" parent="Card/MarginContainer" unique_id=1790729878]
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="PromptLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1552308931]
+[node name="PromptLabel" type="Label" parent="Card/MarginContainer/VBoxContainer" unique_id=1552308931]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(360, 0)
 layout_mode = 2
 text = "Prompt goes here."
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="ChoiceAButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1735415350]
+[node name="ChoiceAButton" type="Button" parent="Card/MarginContainer/VBoxContainer" unique_id=1735415350]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Choice A"
 
-[node name="ChoiceBButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1364834995]
+[node name="ChoiceBButton" type="Button" parent="Card/MarginContainer/VBoxContainer" unique_id=1364834995]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Choice B"
 
-[node name="ContinueButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1907367610]
+[node name="ContinueButton" type="Button" parent="Card/MarginContainer/VBoxContainer" unique_id=1907367610]
 unique_name_in_owner = true
 visible = false
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Continue"

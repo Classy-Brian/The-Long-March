@@ -30,6 +30,17 @@
 [ext_resource type="Texture2D" uid="uid://bbyhw2pax2ajx" path="res://assets/characters/Walkingsergent/frame0019.png" id="27_0mlv0"]
 [ext_resource type="Texture2D" uid="uid://dapml8u0lept8" path="res://assets/characters/Walkingsergent/frame0020.png" id="28_f4abt"]
 [ext_resource type="Texture2D" uid="uid://c83338eqfm23g" path="res://assets/characters/Walkingsergent/frame0021.png" id="29_ctbwf"]
+[ext_resource type="Texture2D" uid="uid://d285hluamk66r" path="res://assets/UI/HPhigh.png" id="ui_hp_h"]
+[ext_resource type="Texture2D" uid="uid://c4yq5txvnkiim" path="res://assets/UI/HPlow.png" id="ui_hp_l"]
+[ext_resource type="Texture2D" uid="uid://dwmsfp4wu4x1y" path="res://assets/UI/HPmid.png" id="ui_hp_m"]
+[ext_resource type="Texture2D" uid="uid://diu76ouy0auwo" path="res://assets/UI/mrolehigh.png" id="ui_mo_h"]
+[ext_resource type="Texture2D" uid="uid://itn3smhwqaek" path="res://assets/UI/mrolelow.png" id="ui_mo_l"]
+[ext_resource type="Texture2D" uid="uid://b4bn0oi7b4p3s" path="res://assets/UI/mrolemid.png" id="ui_mo_m"]
+[ext_resource type="Texture2D" uid="uid://bwvibe6lrbfxo" path="res://assets/UI/statbackdrop.png" id="ui_slab"]
+[ext_resource type="Script" uid="uid://of7cgqulk5aa" path="res://scripts/stat_icon.gd" id="ui_staticon"]
+[ext_resource type="Texture2D" uid="uid://0g4ytxb8slxv" path="res://assets/UI/Thirststathigh.png" id="ui_wa_h"]
+[ext_resource type="Texture2D" uid="uid://cpveyw374kn0w" path="res://assets/UI/thirstystatlow.png" id="ui_wa_l"]
+[ext_resource type="Texture2D" uid="uid://b1wkjy7ou3aa" path="res://assets/UI/thirstystatmid.png" id="ui_wa_m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7kayq"]
 animations = [{
@@ -105,6 +116,46 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="AtlasTexture" id="Atlas_slab"]
+atlas = ExtResource("ui_slab")
+region = Rect2(232, 42, 402, 262)
+
+[sub_resource type="AtlasTexture" id="Atlas_hp_h"]
+atlas = ExtResource("ui_hp_h")
+region = Rect2(96, 80, 368, 368)
+
+[sub_resource type="AtlasTexture" id="Atlas_hp_m"]
+atlas = ExtResource("ui_hp_m")
+region = Rect2(96, 80, 368, 368)
+
+[sub_resource type="AtlasTexture" id="Atlas_hp_l"]
+atlas = ExtResource("ui_hp_l")
+region = Rect2(96, 80, 368, 368)
+
+[sub_resource type="AtlasTexture" id="Atlas_wa_h"]
+atlas = ExtResource("ui_wa_h")
+region = Rect2(96, 80, 368, 368)
+
+[sub_resource type="AtlasTexture" id="Atlas_wa_m"]
+atlas = ExtResource("ui_wa_m")
+region = Rect2(96, 80, 368, 368)
+
+[sub_resource type="AtlasTexture" id="Atlas_wa_l"]
+atlas = ExtResource("ui_wa_l")
+region = Rect2(96, 80, 368, 368)
+
+[sub_resource type="AtlasTexture" id="Atlas_mo_h"]
+atlas = ExtResource("ui_mo_h")
+region = Rect2(96, 80, 368, 368)
+
+[sub_resource type="AtlasTexture" id="Atlas_mo_m"]
+atlas = ExtResource("ui_mo_m")
+region = Rect2(96, 80, 368, 368)
+
+[sub_resource type="AtlasTexture" id="Atlas_mo_l"]
+atlas = ExtResource("ui_mo_l")
+region = Rect2(96, 80, 368, 368)
+
 [node name="Main" type="Node2D" unique_id=969177405]
 script = ExtResource("1_u1xfj")
 events = Array[ExtResource("2_gyg6b")]([ExtResource("3_dc040"), ExtResource("4_1rhdn")])
@@ -157,23 +208,95 @@ centered = false
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=87576567]
 unique_name_in_owner = true
 
-[node name="StatsBar" type="HBoxContainer" parent="UILayer" unique_id=157377064]
-anchors_preset = 10
+[node name="StatsPanel" type="TextureRect" parent="UILayer" unique_id=1427245222]
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
+offset_left = -216.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = 143.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = SubResource("Atlas_slab")
+expand_mode = 1
+
+[node name="StatsBar" type="HBoxContainer" parent="UILayer/StatsPanel" unique_id=589672583]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-theme_override_constants/separation = 20
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+alignment = 1
 
-[node name="HealthLabel" type="Label" parent="UILayer/StatsBar" unique_id=1589237977]
+[node name="HealthStat" type="VBoxContainer" parent="UILayer/StatsPanel/StatsBar" unique_id=1527280165]
+layout_mode = 2
+alignment = 1
+
+[node name="HealthIcon" type="TextureRect" parent="UILayer/StatsPanel/StatsBar/HealthStat" unique_id=580329327]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("Atlas_hp_h")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("ui_staticon")
+high = SubResource("Atlas_hp_h")
+mid = SubResource("Atlas_hp_m")
+low = SubResource("Atlas_hp_l")
+
+[node name="HealthLabel" type="Label" parent="UILayer/StatsPanel/StatsBar/HealthStat" unique_id=23547357]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Health: 100"
+text = "100"
+horizontal_alignment = 1
 
-[node name="HydrationLabel" type="Label" parent="UILayer/StatsBar" unique_id=891145366]
+[node name="HydrationStat" type="VBoxContainer" parent="UILayer/StatsPanel/StatsBar" unique_id=387526860]
+layout_mode = 2
+alignment = 1
+
+[node name="HydrationIcon" type="TextureRect" parent="UILayer/StatsPanel/StatsBar/HydrationStat" unique_id=291620815]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("Atlas_wa_h")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("ui_staticon")
+high = SubResource("Atlas_wa_h")
+mid = SubResource("Atlas_wa_m")
+low = SubResource("Atlas_wa_l")
+
+[node name="HydrationLabel" type="Label" parent="UILayer/StatsPanel/StatsBar/HydrationStat" unique_id=1362903464]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Hydration: 100"
+text = "100"
+horizontal_alignment = 1
 
-[node name="MoraleLabel" type="Label" parent="UILayer/StatsBar" unique_id=610899160]
+[node name="MoraleStat" type="VBoxContainer" parent="UILayer/StatsPanel/StatsBar" unique_id=1903332462]
+layout_mode = 2
+alignment = 1
+
+[node name="MoraleIcon" type="TextureRect" parent="UILayer/StatsPanel/StatsBar/MoraleStat" unique_id=1925340897]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("Atlas_mo_h")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("ui_staticon")
+high = SubResource("Atlas_mo_h")
+mid = SubResource("Atlas_mo_m")
+low = SubResource("Atlas_mo_l")
+
+[node name="MoraleLabel" type="Label" parent="UILayer/StatsPanel/StatsBar/MoraleStat" unique_id=1802372237]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Morale: 100"
+text = "100"
+horizontal_alignment = 1
