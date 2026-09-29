@@ -3,6 +3,7 @@ extends Node2D
 const PACE_SCENE: PackedScene = preload("res://scenes/relentless_pace/RelentlessPace.tscn")
 const DECISION_SCENE: PackedScene = preload("res://scenes/decision_point/DecisionPoint.tscn")
 const END_SCENE: PackedScene = preload("res://scenes/ending/EndScreen.tscn")
+const DEATH_SCENE: PackedScene = preload("res://scenes/death/DeathCutscene.tscn")
 
 @export var events: Array[DecisionEvent] = []
 @export var pace_lines: Array[String] = []
@@ -88,16 +89,47 @@ func _update_stats() -> void:
 	morale_icon.show_value(soldier.morale)
 
 func _on_soldier_died(soldier: Soldier) -> void:
-	if not soldier.is_main:
+	if not soldier.is_main or _march_over:
 		return
-	_show_end("The march goes on without you.", soldier.death_cause)
+	_march_over = true
+	_set_marching(false)
+	var cutscene: DeathCutscene = DEATH_SCENE.instantiate()
+	cutscene.cause = soldier.death_cause
+	cutscene.finished.connect(_present_end.bind("The march goes on without you.", soldier.death_cause))
+	_show_screen(cutscene)
 
 func _show_end(title: String, body: String) -> void:
 	if _march_over:
 		return
 	_march_over = true
+	_set_marching(false)
+	_present_end(title, body)
+
+func _present_end(title: String, body: String) -> void:
 	var ending: EndScreen = END_SCENE.instantiate()
 	ending.title_text = title
 	ending.body_text = body
-	_set_marching(false)
 	_show_screen(ending)
+
+## DEBUG ONLY - test keys, ignored in release exports (Export With Debug off).
+## F1 guard  F2 dysentery  F3 dehydration  F4 truck  F5 wounds  F6 all stats -20
+func _unhandled_input(event: InputEvent) -> void:
+	if not OS.is_debug_build():
+		return
+	if not (event is InputEventKey and event.pressed and not event.echo):
+		return
+	var soldier: Soldier = Party.get_main_soldier()
+	match event.keycode:
+		KEY_F1:
+			soldier.apply_stat_delta("health", -999.0, "Beaten for falling behind.")
+		KEY_F2:
+			soldier.apply_stat_delta("health", -999.0, "Dysentery, from the water in the road.")
+		KEY_F3:
+			soldier.apply_stat_delta("hydration", -999.0)
+		KEY_F4:
+			soldier.apply_stat_delta("health", -999.0, "Run over by a truck.")
+		KEY_F5:
+			soldier.apply_stat_delta("health", -999.0, "Collapsed on the road.")
+		KEY_F6:
+			for stat in ["health", "hydration", "morale"]:
+				soldier.apply_stat_delta(stat, -20.0, "Collapsed on the road.")
