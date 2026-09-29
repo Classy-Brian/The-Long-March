@@ -30,6 +30,69 @@
 [ext_resource type="Texture2D" uid="uid://bbyhw2pax2ajx" path="res://assets/characters/Walkingsergent/frame0019.png" id="27_0mlv0"]
 [ext_resource type="Texture2D" uid="uid://dapml8u0lept8" path="res://assets/characters/Walkingsergent/frame0020.png" id="28_f4abt"]
 [ext_resource type="Texture2D" uid="uid://c83338eqfm23g" path="res://assets/characters/Walkingsergent/frame0021.png" id="29_ctbwf"]
+[ext_resource type="Texture2D" uid="uid://7kcu2utywl2t" path="res://assets/characters/Japanwalk/frame0000.png" id="Guard_f00"]
+[ext_resource type="Texture2D" uid="uid://bk0vdby277o4" path="res://assets/characters/Japanwalk/frame0001.png" id="Guard_f01"]
+[ext_resource type="Texture2D" uid="uid://cyyc15gq1sjwl" path="res://assets/characters/Japanwalk/frame0002.png" id="Guard_f02"]
+[ext_resource type="Texture2D" uid="uid://bafj2v16fth4v" path="res://assets/characters/Japanwalk/frame0003.png" id="Guard_f03"]
+[ext_resource type="Texture2D" uid="uid://ju3trs2hv4c1" path="res://assets/characters/Japanwalk/frame0004.png" id="Guard_f04"]
+[ext_resource type="Texture2D" uid="uid://c6m8htpfopfol" path="res://assets/characters/Japanwalk/frame0005.png" id="Guard_f05"]
+[ext_resource type="Texture2D" uid="uid://rhbwv74r8pvk" path="res://assets/characters/Japanwalk/frame0006.png" id="Guard_f06"]
+[ext_resource type="Texture2D" uid="uid://dltb6npcwncdg" path="res://assets/characters/Japanwalk/frame0007.png" id="Guard_f07"]
+[ext_resource type="Texture2D" uid="uid://cgnpna30sw7x6" path="res://assets/characters/Japanwalk/frame0008.png" id="Guard_f08"]
+[ext_resource type="Texture2D" uid="uid://bcxsi3plar4cu" path="res://assets/characters/Japanwalk/frame0009.png" id="Guard_f09"]
+[ext_resource type="Texture2D" uid="uid://fyrhjimeva2w" path="res://assets/characters/Japanwalk/frame0010.png" id="Guard_f10"]
+[ext_resource type="Texture2D" uid="uid://btrkb33pwsmus" path="res://assets/characters/Japanwalk/frame0011.png" id="Guard_f11"]
+[ext_resource type="Texture2D" uid="uid://b4ugvb0yipluc" path="res://assets/characters/Japanwalk/frame0012.png" id="Guard_f12"]
+[ext_resource type="Texture2D" uid="uid://d3mwl4tv13f0b" path="res://assets/characters/Japanwalk/frame0013.png" id="Guard_f13"]
+[ext_resource type="Texture2D" uid="uid://b8omcn0fp3bur" path="res://assets/characters/Japanwalk/frame0014.png" id="Guard_f14"]
+[ext_resource type="Texture2D" uid="uid://c4y6gwxxf016m" path="res://assets/characters/Japanwalk/frame0015.png" id="Guard_f15"]
+[ext_resource type="Texture2D" uid="uid://bvtadhwrr0ibh" path="res://assets/characters/Japanwalk/frame0016.png" id="Guard_f16"]
+[ext_resource type="Texture2D" uid="uid://buh5yny5auc8x" path="res://assets/characters/Japanwalk/frame0017.png" id="Guard_f17"]
+[ext_resource type="Texture2D" uid="uid://ck2j1lnx15g7j" path="res://assets/characters/Japanwalk/frame0018.png" id="Guard_f18"]
+[ext_resource type="Texture2D" uid="uid://cx5uq2qanpj43" path="res://assets/characters/Japanwalk/frame0019.png" id="Guard_f19"]
+[ext_resource type="Texture2D" uid="uid://cjqney6w4dy60" path="res://assets/characters/Japanwalk/frame0020.png" id="Guard_f20"]
+[ext_resource type="Texture2D" uid="uid://ch3dwx4eo4arc" path="res://assets/characters/private1walk/frame0000.png" id="Private1_f00"]
+[ext_resource type="Texture2D" uid="uid://5318dtp8qsqk" path="res://assets/characters/private1walk/frame0001.png" id="Private1_f01"]
+[ext_resource type="Texture2D" uid="uid://5v7bisogcxlp" path="res://assets/characters/private1walk/frame0002.png" id="Private1_f02"]
+[ext_resource type="Texture2D" uid="uid://sykbr2ouaqo3" path="res://assets/characters/private1walk/frame0003.png" id="Private1_f03"]
+[ext_resource type="Texture2D" uid="uid://dkg2pvjoeq0p8" path="res://assets/characters/private1walk/frame0004.png" id="Private1_f04"]
+[ext_resource type="Texture2D" uid="uid://cvc7xkpxyl1oo" path="res://assets/characters/private1walk/frame0005.png" id="Private1_f05"]
+[ext_resource type="Texture2D" uid="uid://da0pw4phfnmq6" path="res://assets/characters/private1walk/frame0006.png" id="Private1_f06"]
+[ext_resource type="Texture2D" uid="uid://dqhvb8hy6g8qf" path="res://assets/characters/private1walk/frame0007.png" id="Private1_f07"]
+[ext_resource type="Texture2D" uid="uid://cnlylgaicc5vb" path="res://assets/characters/private1walk/frame0008.png" id="Private1_f08"]
+[ext_resource type="Texture2D" uid="uid://ujdqckm8eq71" path="res://assets/characters/private1walk/frame0009.png" id="Private1_f09"]
+[ext_resource type="Texture2D" uid="uid://drj3n5lun2rxg" path="res://assets/characters/private1walk/frame0010.png" id="Private1_f10"]
+[ext_resource type="Texture2D" uid="uid://ut5r2xeblcjw" path="res://assets/characters/private1walk/frame0011.png" id="Private1_f11"]
+[ext_resource type="Texture2D" uid="uid://dgoh21d6a72p8" path="res://assets/characters/private1walk/frame0012.png" id="Private1_f12"]
+[ext_resource type="Texture2D" uid="uid://b763fo8jhxgij" path="res://assets/characters/private1walk/frame0013.png" id="Private1_f13"]
+[ext_resource type="Texture2D" uid="uid://cntc25btaxusw" path="res://assets/characters/private1walk/frame0014.png" id="Private1_f14"]
+[ext_resource type="Texture2D" uid="uid://d3edh4fsnysl3" path="res://assets/characters/private1walk/frame0015.png" id="Private1_f15"]
+[ext_resource type="Texture2D" uid="uid://cglm24ibsfw66" path="res://assets/characters/private1walk/frame0016.png" id="Private1_f16"]
+[ext_resource type="Texture2D" uid="uid://cec2po24j522y" path="res://assets/characters/private1walk/frame0017.png" id="Private1_f17"]
+[ext_resource type="Texture2D" uid="uid://tdv6gr3w80oq" path="res://assets/characters/private1walk/frame0018.png" id="Private1_f18"]
+[ext_resource type="Texture2D" uid="uid://d13gmc8gm830l" path="res://assets/characters/private1walk/frame0019.png" id="Private1_f19"]
+[ext_resource type="Texture2D" uid="uid://hnnbh8pgdq8p" path="res://assets/characters/private1walk/frame0020.png" id="Private1_f20"]
+[ext_resource type="Texture2D" uid="uid://ig1jbe1smkmr" path="res://assets/characters/private2walk/frame0000.png" id="Private2_f00"]
+[ext_resource type="Texture2D" uid="uid://co5dlo41f58q6" path="res://assets/characters/private2walk/frame0001.png" id="Private2_f01"]
+[ext_resource type="Texture2D" uid="uid://cg88tnxo7h7pl" path="res://assets/characters/private2walk/frame0002.png" id="Private2_f02"]
+[ext_resource type="Texture2D" uid="uid://bf4ii5fppxwmf" path="res://assets/characters/private2walk/frame0003.png" id="Private2_f03"]
+[ext_resource type="Texture2D" uid="uid://ba43im1oqu86i" path="res://assets/characters/private2walk/frame0004.png" id="Private2_f04"]
+[ext_resource type="Texture2D" uid="uid://cre7jkrrfcrom" path="res://assets/characters/private2walk/frame0005.png" id="Private2_f05"]
+[ext_resource type="Texture2D" uid="uid://djct4tbe8cahq" path="res://assets/characters/private2walk/frame0006.png" id="Private2_f06"]
+[ext_resource type="Texture2D" uid="uid://cupte7b63dgcw" path="res://assets/characters/private2walk/frame0007.png" id="Private2_f07"]
+[ext_resource type="Texture2D" uid="uid://cvok4yt5tygvc" path="res://assets/characters/private2walk/frame0008.png" id="Private2_f08"]
+[ext_resource type="Texture2D" uid="uid://bx0pghgco1b0h" path="res://assets/characters/private2walk/frame0009.png" id="Private2_f09"]
+[ext_resource type="Texture2D" uid="uid://bwmkghvy70pn6" path="res://assets/characters/private2walk/frame0010.png" id="Private2_f10"]
+[ext_resource type="Texture2D" uid="uid://dqa7oe1nmxf4" path="res://assets/characters/private2walk/frame0011.png" id="Private2_f11"]
+[ext_resource type="Texture2D" uid="uid://b63d16i6nt6qn" path="res://assets/characters/private2walk/frame0012.png" id="Private2_f12"]
+[ext_resource type="Texture2D" uid="uid://bp5ktp6qtbem6" path="res://assets/characters/private2walk/frame0013.png" id="Private2_f13"]
+[ext_resource type="Texture2D" uid="uid://be0gisgsh8gpy" path="res://assets/characters/private2walk/frame0014.png" id="Private2_f14"]
+[ext_resource type="Texture2D" uid="uid://bl6ogen72et7c" path="res://assets/characters/private2walk/frame0015.png" id="Private2_f15"]
+[ext_resource type="Texture2D" uid="uid://ccgt47r6sx1ri" path="res://assets/characters/private2walk/frame0016.png" id="Private2_f16"]
+[ext_resource type="Texture2D" uid="uid://vd4bm7l0a485" path="res://assets/characters/private2walk/frame0017.png" id="Private2_f17"]
+[ext_resource type="Texture2D" uid="uid://b6vdcx0enxvsk" path="res://assets/characters/private2walk/frame0018.png" id="Private2_f18"]
+[ext_resource type="Texture2D" uid="uid://ba0invgro202p" path="res://assets/characters/private2walk/frame0019.png" id="Private2_f19"]
+[ext_resource type="Texture2D" uid="uid://dxefw34lv51os" path="res://assets/characters/private2walk/frame0020.png" id="Private2_f20"]
 [ext_resource type="Texture2D" uid="uid://d285hluamk66r" path="res://assets/UI/HPhigh.png" id="ui_hp_h"]
 [ext_resource type="Texture2D" uid="uid://c4yq5txvnkiim" path="res://assets/UI/HPlow.png" id="ui_hp_l"]
 [ext_resource type="Texture2D" uid="uid://dwmsfp4wu4x1y" path="res://assets/UI/HPmid.png" id="ui_hp_m"]
@@ -41,6 +104,219 @@
 [ext_resource type="Texture2D" uid="uid://0g4ytxb8slxv" path="res://assets/UI/Thirststathigh.png" id="ui_wa_h"]
 [ext_resource type="Texture2D" uid="uid://cpveyw374kn0w" path="res://assets/UI/thirstystatlow.png" id="ui_wa_l"]
 [ext_resource type="Texture2D" uid="uid://b1wkjy7ou3aa" path="res://assets/UI/thirstystatmid.png" id="ui_wa_m"]
+
+[sub_resource type="SpriteFrames" id="Frames_Guard"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("Guard_f00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f09")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Guard_f20")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="Frames_Private1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("Private1_f00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f09")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private1_f20")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="Frames_Private2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("Private2_f00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f09")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("Private2_f20")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 12.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7kayq"]
 animations = [{
@@ -188,6 +464,38 @@ texture = ExtResource("7_sjxhf")
 centered = false
 
 [node name="CharactersAndUI" type="Node2D" parent="." unique_id=608258958]
+
+[node name="Guard" type="AnimatedSprite2D" parent="CharactersAndUI" unique_id=301580933]
+unique_name_in_owner = true
+modulate = Color(0.72, 0.72, 0.72, 1)
+position = Vector2(-120, 90)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("Frames_Guard")
+animation = &"walk"
+autoplay = "walk"
+speed_scale = 0.93
+centered = false
+
+[node name="Private1" type="AnimatedSprite2D" parent="CharactersAndUI" unique_id=2134804611]
+unique_name_in_owner = true
+modulate = Color(0.72, 0.72, 0.72, 1)
+position = Vector2(-60, 140)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("Frames_Private1")
+animation = &"walk"
+autoplay = "walk"
+speed_scale = 1.07
+centered = false
+
+[node name="Private2" type="AnimatedSprite2D" parent="CharactersAndUI" unique_id=858959056]
+unique_name_in_owner = true
+modulate = Color(0.72, 0.72, 0.72, 1)
+position = Vector2(60, 140)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("Frames_Private2")
+animation = &"walk"
+autoplay = "walk"
+centered = false
 
 [node name="Sergeant" type="AnimatedSprite2D" parent="CharactersAndUI" unique_id=1331190197]
 unique_name_in_owner = true

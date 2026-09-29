@@ -15,7 +15,7 @@ const END_SCENE: PackedScene = preload("res://scenes/ending/EndScreen.tscn")
 @onready var health_icon: StatIcon = %HealthIcon
 @onready var hydration_icon: StatIcon = %HydrationIcon
 @onready var morale_icon: StatIcon = %MoraleIcon
-@onready var sergeant: AnimatedSprite2D = %Sergeant
+@onready var walkers: Array[AnimatedSprite2D] = [%Guard, %Private1, %Private2, %Sergeant]
 
 var current_scene: Node = null
 var _event_index: int = 0
@@ -68,11 +68,12 @@ func _on_decision_made() -> void:
 func _set_marching(marching: bool) -> void:
 	for layer in parallax_layers:
 		layer.process_mode = Node.PROCESS_MODE_INHERIT if marching else Node.PROCESS_MODE_DISABLED
-	if marching:
-		sergeant.play("walk")
-	else:
-		sergeant.stop()
-		sergeant.frame = 0
+	for walker in walkers:
+		if marching:
+			walker.play("walk")
+		else:
+			walker.stop()
+			walker.frame = 0
 
 func _end_march() -> void:
 	_show_end("The column halts.", "You are still on your feet when the guards call the end of the day's march.")
