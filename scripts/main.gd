@@ -81,9 +81,9 @@ func _end_march() -> void:
 
 func _update_stats() -> void:
 	var soldier: Soldier = Party.get_main_soldier()
-	health_label.text = "%d" % soldier.health
-	hydration_label.text = "%d" % soldier.hydration
-	morale_label.text = "%d" % soldier.morale
+	health_label.text = "%d" % ceili(soldier.health)
+	hydration_label.text = "%d" % ceili(soldier.hydration)
+	morale_label.text = "%d" % ceili(soldier.morale)
 	health_icon.show_value(soldier.health)
 	hydration_icon.show_value(soldier.hydration)
 	morale_icon.show_value(soldier.morale)

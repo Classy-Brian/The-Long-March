@@ -5,4 +5,8 @@ Filipino Horror Game Jam 2026 entry: A survival decision game set during the Bat
 ## Structure
 - `scenes/` — Godot scenes
 - `scripts/` — GDScript sources
-- `assets/` — art, audio, fonts (mostly placeholders for now)
+- `assets/` — art (backgrounds, characters, UI, death cutscenes), fonts (Courier Prime), audio
+- `themes/` — the project-wide UI Theme
+- `events/` — decision events as `.tres` data files
+
+Entry scene: `scenes/title/TitleScreen.tscn`.
