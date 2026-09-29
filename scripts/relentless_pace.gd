@@ -11,9 +11,14 @@ signal segment_completed(success: bool)
 @export var target_text: String = "Keep moving. Do not fall behind."
 @export var time_limit: float = 20.0
 @export var health_penalty_per_mistake: float = 2.0
+## Marching under the sun: Hydration drains every second you're still typing.
+@export var hydration_drain_per_second: float = 0.5
+## Running out of time means you fell behind the column.
+@export var timeout_health_penalty: float = 10.0
 
 @onready var target_label: Label = %TargetLabel
 @onready var input_field: LineEdit = %InputField
+@onready var timer_bar: ProgressBar = %TimerBar
 
 var _time_remaining: float = 0.0
 var _finished: bool = false
@@ -29,7 +34,16 @@ func _process(delta: float) -> void:
 	if _finished:
 		return
 	_time_remaining -= delta
+	var ratio: float = maxf(_time_remaining, 0.0) / time_limit
+	timer_bar.value = ratio * 100.0
+	# Last 30%: the bar turns blood red.
+	timer_bar.modulate = Color(1, 1, 1) if ratio > 0.3 else Color(2.5, 0.4, 0.4)
+	var main: Soldier = Party.get_main_soldier()
+	if main:
+		main.apply_stat_delta("hydration", -hydration_drain_per_second * delta)
 	if _time_remaining <= 0.0:
+		if main:
+			main.apply_stat_delta("health", -timeout_health_penalty, "Beaten for falling behind.")
 		_finish(false)
 
 func _on_text_changed(new_text: String) -> void:
