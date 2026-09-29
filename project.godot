@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="The Long March"
 config/description="Filipino Horror Game Jam 2026 entry. Survival decision game set during the Bataan Death March (April 1942)."
-run/main_scene="res://scenes/main/Main.tscn"
+run/main_scene="res://scenes/title/TitleScreen.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

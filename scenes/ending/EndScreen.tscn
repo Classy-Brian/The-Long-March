@@ -1,6 +1,21 @@
 [gd_scene format=3 uid="uid://dx5hm16eexb7j"]
 
 [ext_resource type="Script" uid="uid://sunlx5v7u8kw" path="res://scripts/end_screen.gd" id="1_t27cv"]
+[ext_resource type="Texture2D" uid="uid://cx2d1m6mnp1c2" path="res://assets/UI/desicion_backdrop.png" id="2_slab"]
+[ext_resource type="Texture2D" uid="uid://cq87pvdeq2ow4" path="res://assets/UI/restart.png" id="3_restart"]
+[ext_resource type="Texture2D" uid="uid://c8k2mxkewsnii" path="res://assets/UI/restartselected.png" id="4_restart_sel"]
+
+[sub_resource type="AtlasTexture" id="Atlas_card"]
+atlas = ExtResource("2_slab")
+region = Rect2(79, 98, 476, 291)
+
+[sub_resource type="AtlasTexture" id="Atlas_restart"]
+atlas = ExtResource("3_restart")
+region = Rect2(151, 128, 363, 241)
+
+[sub_resource type="AtlasTexture" id="Atlas_restart_sel"]
+atlas = ExtResource("4_restart_sel")
+region = Rect2(151, 128, 363, 241)
 
 [node name="EndScreen" type="Control" unique_id=435567692]
 layout_mode = 3
@@ -11,34 +26,57 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t27cv")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=701637221]
+[node name="Card" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 152.0
+offset_right = 626.0
+offset_bottom = 472.0
+mouse_filter = 2
+texture = SubResource("Atlas_card")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Card" unique_id=701637221]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 26
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 26
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=322565271]
+[node name="VBoxContainer" type="VBoxContainer" parent="Card/MarginContainer" unique_id=322565271]
 layout_mode = 2
+theme_override_constants/separation = 14
 size_flags_horizontal = 4
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1898393983]
+[node name="TitleLabel" type="Label" parent="Card/MarginContainer/VBoxContainer" unique_id=1898393983]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
 text = "Title"
 horizontal_alignment = 1
 
-[node name="BodyLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1921642331]
+[node name="BodyLabel" type="Label" parent="Card/MarginContainer/VBoxContainer" unique_id=1921642331]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(360, 0)
 layout_mode = 2
 text = "Body"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="RestartButton" type="TextureButton" parent="Card/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = SubResource("Atlas_restart")
+texture_pressed = SubResource("Atlas_restart_sel")
+texture_hover = SubResource("Atlas_restart_sel")
+ignore_texture_size = true
+stretch_mode = 5

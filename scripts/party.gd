@@ -13,6 +13,10 @@ var soldiers: Array[Soldier] = []
 func _ready() -> void:
 	_init_default_party()
 
+## Fresh party for a new march (called by Start and Restart).
+func reset() -> void:
+	_init_default_party()
+
 func _init_default_party() -> void:
 	soldiers.clear()
 	soldiers.append(_make_soldier("Main Soldier", true))

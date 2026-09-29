@@ -3,20 +3,11 @@
 [ext_resource type="FontFile" uid="uid://cbh81jji84xxc" path="res://assets/fonts/Courier_Prime/CourierPrime-Regular.ttf" id="1_rjgu6"]
 [ext_resource type="Texture2D" uid="uid://bscyhyfktlhxm" path="res://assets/UI/choosebox.png" id="2_choose"]
 
+[sub_resource type="StyleBoxEmpty" id="Btn_focus"]
+
 [sub_resource type="AtlasTexture" id="Atlas_choose"]
 atlas = ExtResource("2_choose")
 region = Rect2(154, 293, 338, 110)
-
-[sub_resource type="StyleBoxTexture" id="Btn_normal"]
-content_margin_left = 18.0
-content_margin_top = 8.0
-content_margin_right = 18.0
-content_margin_bottom = 8.0
-texture = SubResource("Atlas_choose")
-texture_margin_left = 14.0
-texture_margin_top = 12.0
-texture_margin_right = 14.0
-texture_margin_bottom = 12.0
 
 [sub_resource type="StyleBoxTexture" id="Btn_hover"]
 content_margin_left = 18.0
@@ -30,6 +21,17 @@ texture_margin_right = 14.0
 texture_margin_bottom = 12.0
 modulate_color = Color(0.82, 0.82, 0.82, 1)
 
+[sub_resource type="StyleBoxTexture" id="Btn_normal"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 8.0
+texture = SubResource("Atlas_choose")
+texture_margin_left = 14.0
+texture_margin_top = 12.0
+texture_margin_right = 14.0
+texture_margin_bottom = 12.0
+
 [sub_resource type="StyleBoxTexture" id="Btn_pressed"]
 content_margin_left = 18.0
 content_margin_top = 8.0
@@ -41,8 +43,6 @@ texture_margin_top = 12.0
 texture_margin_right = 14.0
 texture_margin_bottom = 12.0
 modulate_color = Color(0.65, 0.65, 0.65, 1)
-
-[sub_resource type="StyleBoxEmpty" id="Btn_focus"]
 
 [resource]
 default_font = ExtResource("1_rjgu6")
