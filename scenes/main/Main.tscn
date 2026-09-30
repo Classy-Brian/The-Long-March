@@ -468,7 +468,7 @@ centered = false
 [node name="Guard" type="AnimatedSprite2D" parent="CharactersAndUI" unique_id=301580933]
 unique_name_in_owner = true
 modulate = Color(0.72, 0.72, 0.72, 1)
-position = Vector2(-120, 90)
+position = Vector2(-115, 105)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("Frames_Guard")
 animation = &"walk"
@@ -479,7 +479,7 @@ centered = false
 [node name="Private1" type="AnimatedSprite2D" parent="CharactersAndUI" unique_id=2134804611]
 unique_name_in_owner = true
 modulate = Color(0.72, 0.72, 0.72, 1)
-position = Vector2(-60, 140)
+position = Vector2(-60, 122)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("Frames_Private1")
 animation = &"walk"
@@ -490,7 +490,7 @@ centered = false
 [node name="Private2" type="AnimatedSprite2D" parent="CharactersAndUI" unique_id=858959056]
 unique_name_in_owner = true
 modulate = Color(0.72, 0.72, 0.72, 1)
-position = Vector2(60, 140)
+position = Vector2(52, 117)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("Frames_Private2")
 animation = &"walk"
@@ -499,6 +499,7 @@ centered = false
 
 [node name="Sergeant" type="AnimatedSprite2D" parent="CharactersAndUI" unique_id=1331190197]
 unique_name_in_owner = true
+position = Vector2(40, 6)
 sprite_frames = SubResource("SpriteFrames_7kayq")
 animation = &"walk"
 autoplay = "walk"
