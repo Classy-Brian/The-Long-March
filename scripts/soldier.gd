@@ -3,10 +3,7 @@ class_name Soldier
 
 ## Represents a single soldier in the player's party.
 ## Stats are clamped 0-100. Hitting 0 on Health or Hydration triggers a death event.
-## Morale affects decision point outcomes (exact formulas TBD).
-## Stat structure finalized 2026-09-13: Health (renamed from Stamina, broader
-## scope), Hydration (new), Morale. Hunger was removed entirely, not folded
-## into anything else.
+## Morale affects decision point outcomes
 
 signal died(cause: String)
 
