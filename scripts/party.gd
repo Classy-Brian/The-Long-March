@@ -1,9 +1,6 @@
 extends Node
 
 ## Party manager - registered as an autoload singleton named "Party"
-## (see [autoload] in project.godot). Holds the 3 soldiers: one main
-## player-controlled soldier plus two background/support soldiers whose
-## stats are still tracked. Exact background-soldier mechanics are TBD
 
 signal soldier_died(soldier: Soldier)
 signal party_wiped

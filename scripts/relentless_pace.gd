@@ -3,8 +3,8 @@ class_name RelentlessPace
 
 ## First pass at the "Relentless Pace" typing segment. The player must type
 ## out `target_text` before `time_limit` runs out. Falling behind (a wrong
-## keystroke) drains the main soldier's Health. This is a scaffold -
-## tuning (drain rate, time limit, difficulty scaling) is not finalized;
+## keystroke) drains the main soldier's Health. This is a scaffold
+## tuning (drain rate, time limit, difficulty scaling)
 
 signal segment_completed(success: bool)
 
