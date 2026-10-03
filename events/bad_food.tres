@@ -4,17 +4,17 @@
 
 [resource]
 script = ExtResource("1_3hg6l")
-prompt_text = "Rice is passed down the line from a pot crawling with maggots. It is the first food anyone has been offered in two days."
-death_cause = "Sickness, from the rice."
-a_text = "Eat it."
-a_success_chance = 60.0
-a_success_result = "It is sour and wrong, but it stays down."
-a_success_morale = -5.0
-a_failure_result = "Within the hour you are doubled over at the roadside."
-a_failure_health = -20.0
-a_failure_hydration = -10.0
-a_failure_morale = -10.0
-b_text = "Pass it on."
-b_success_result = "You hand the bowl back and keep your eyes on the road."
-b_success_morale = -10.0
+prompt_text = "One of your private was found with possible Japanese souvenir from the battle of Batan. This angered the guards and they prepare to behead him for it. "
+death_cause = "Stabbed by Guard"
+a_text = "Rush in to defend your men."
+a_success_chance = 20.0
+a_success_result = "The Japanese guards calm down. Instead of killing the private, they cut off the man's fingers as punishment and move on."
+a_success_morale = 60.0
+a_failure_result = "The Japanese guards turn their anger towards you for defending your men. Pull out their Gunto and aim to cut off your limbs too. "
+a_failure_health = -75.0
+a_failure_morale = -30.0
+b_text = "Keep walking. Do not anger the guards."
+b_success_result = "You watch as the Japanese guards pushes your private down to his knees. They swing the gunto at his neck. Blood spattered everywhere but it was not enough to instantly kill him. They hack at his neck until the head is ripped from his body. "
+b_success_morale = -40.0
+b_failure_result = "wahwahwahwahawh"
 metadata/_custom_type_script = "uid://d33a7xio2g6x8"
