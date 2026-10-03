@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_3hg6l")
+order = 30
 prompt_text = "One of your private was found with possible Japanese souvenir from the battle of Batan. This angered the guards and they prepare to behead him for it. "
 death_cause = "Stabbed by Guard"
 a_text = "Rush in to defend your men."

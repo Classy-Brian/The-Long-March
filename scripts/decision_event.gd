@@ -4,6 +4,11 @@ class_name DecisionEvent
 ## One decision-point event. Each event is a filled-in .tres file
 ## using this as its blueprint
 
+## Where this event happens in the march: lower numbers come first.
+@export var order: int = 0
+## Untick to leave a draft event out of the game without deleting it.
+@export var enabled: bool = true
+
 @export_multiline var prompt_text: String = ""
 @export var death_cause: String = ""
 

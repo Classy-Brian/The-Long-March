@@ -1,9 +1,6 @@
 [gd_scene format=3 uid="uid://dwhfje6geg76v"]
 
 [ext_resource type="Script" uid="uid://bvg5hy4d24oti" path="res://scripts/main.gd" id="1_u1xfj"]
-[ext_resource type="Script" uid="uid://d33a7xio2g6x8" path="res://scripts/decision_event.gd" id="2_gyg6b"]
-[ext_resource type="Resource" uid="uid://bu4iqtp4pgl7s" path="res://events/puddle_water.tres" id="3_dc040"]
-[ext_resource type="Resource" uid="uid://bkcg20xi4fly3" path="res://events/bad_food.tres" id="4_1rhdn"]
 [ext_resource type="Texture2D" uid="uid://d1xdb8iawgttp" path="res://assets/characters/Walkingsergent/frame0000.png" id="8_ftc2p"]
 [ext_resource type="Texture2D" uid="uid://vfxrgc1ckfl2" path="res://assets/backgrounds/backrooms/foreground.png" id="8_ko0rf"]
 [ext_resource type="Texture2D" uid="uid://bc7q852oeqqow" path="res://assets/characters/Walkingsergent/frame0001.png" id="9_04n4k"]
@@ -431,7 +428,6 @@ region = Rect2(96, 80, 368, 368)
 
 [node name="Main" type="Node2D" unique_id=969177405]
 script = ExtResource("1_u1xfj")
-events = Array[ExtResource("2_gyg6b")]([ExtResource("3_dc040"), ExtResource("4_1rhdn")])
 pace_lines = Array[String](["Keep moving. Do not fall behind.", "The man ahead of you stumbles. Nobody stops.", "Dust. Sun. The sound of boots. Keep walking."])
 
 [node name="Mountain" type="Parallax2D" parent="." unique_id=272272998]

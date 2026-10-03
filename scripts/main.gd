@@ -5,7 +5,12 @@ const DECISION_SCENE: PackedScene = preload("res://scenes/decision_point/Decisio
 const END_SCENE: PackedScene = preload("res://scenes/ending/EndScreen.tscn")
 const DEATH_SCENE: PackedScene = preload("res://scenes/death/DeathCutscene.tscn")
 
-@export var events: Array[DecisionEvent] = []
+## Every .tres in this folder is a decision event and is picked up
+## automatically (sorted by its `order`). Files starting with "_" are skipped,
+## so events/_template.tres can be duplicated to make new ones.
+const EVENTS_DIR := "res://events/"
+
+var events: Array[DecisionEvent] = []
 @export var pace_lines: Array[String] = []
 
 @onready var parallax_layers: Array[Parallax2D] = [%Mountain, %BackBG, %Trees, %BG, %Foreground]
@@ -23,6 +28,7 @@ var _event_index: int = 0
 var _march_over: bool = false
 
 func _ready() -> void:
+	events = _load_events()
 	Party.get_main_soldier().changed.connect(_update_stats)
 	Party.soldier_died.connect(_on_soldier_died)
 	_update_stats()
@@ -134,3 +140,16 @@ func _unhandled_input(event: InputEvent) -> void:
 		KEY_F6:
 			for stat in ["health", "hydration", "morale"]:
 				soldier.apply_stat_delta(stat, -20.0, "Collapsed on the road.")
+
+func _load_events() -> Array[DecisionEvent]:
+	var found: Array[DecisionEvent] = []
+	# list_directory also works in exported builds, where files get renamed.
+	for file in ResourceLoader.list_directory(EVENTS_DIR):
+		if file.begins_with("_") or not file.ends_with(".tres"):
+			continue
+		var event := load(EVENTS_DIR + file) as DecisionEvent
+		if event and event.enabled:
+			found.append(event)
+	found.sort_custom(func(a: DecisionEvent, b: DecisionEvent) -> bool: return a.order < b.order)
+	print("Loaded ", found.size(), " decision events")
+	return found
