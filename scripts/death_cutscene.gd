@@ -1,12 +1,6 @@
 extends Control
 class_name DeathCutscene
 
-## Plays the teammate's death art for a cause of death, then emits `finished`.
-## Which images play is picked from keywords in `cause` (see _pick_sequence).
-## During the stab images a twitching-hand layer loops on top at its own,
-## faster speed (two flipbooks stacked, each flipping at its own rate).
-## Click to skip.
-
 signal finished
 
 const DIR := "res://assets/Deathcutscene/"
@@ -17,8 +11,15 @@ const SEQUENCES := {
 	"wounds": ["DCbleed-wounds"],
 	"truck": ["runover1", "runover2"],
 }
+
 ## Overlay loop, shown while the main image name starts with "stab".
 const TWITCH := ["twichhand1", "twichhand2", "twichhand3", "twichhand2"]
+## Sound played when an image first appears (see Sfx.SOUNDS).
+const IMAGE_SOUNDS := {
+	"stab1": "stab", "stab2": "stab", "stab3": "stab",
+	"runover1": "bones",
+	"DCHeatstroke-hydration": "fall", "DCbleed-wounds": "fall",
+}
 
 @export var frame_time: float = 1.0
 @export var twitch_frame_time: float = 0.12
@@ -37,6 +38,7 @@ var _total: float = 0.0
 var _twitch_index: int = 0
 var _twitch_time: float = 0.0
 var _done: bool = false
+var _last_image: String = ""
 
 func _ready() -> void:
 	for image in SEQUENCES[_pick_sequence(cause)]:
@@ -75,6 +77,9 @@ func _process(delta: float) -> void:
 func _show_step() -> void:
 	var image: String = _steps[_step][0]
 	picture.texture = load(DIR + image + ".png")
+	if image != _last_image and IMAGE_SOUNDS.has(image):
+		Sfx.play(IMAGE_SOUNDS[image])
+	_last_image = image
 	overlay.visible = image.begins_with("stab")
 
 func _animate_overlay(delta: float) -> void:

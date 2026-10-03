@@ -4,9 +4,6 @@
 [ext_resource type="Script" uid="uid://d33a7xio2g6x8" path="res://scripts/decision_event.gd" id="2_gyg6b"]
 [ext_resource type="Resource" uid="uid://bu4iqtp4pgl7s" path="res://events/puddle_water.tres" id="3_dc040"]
 [ext_resource type="Resource" uid="uid://bkcg20xi4fly3" path="res://events/bad_food.tres" id="4_1rhdn"]
-[ext_resource type="Texture2D" uid="uid://dwj6wqopfj3kj" path="res://assets/backgrounds/backrooms/soild_mountainsky.png" id="5_dc040"]
-[ext_resource type="Texture2D" uid="uid://s64ge6j25pg8" path="res://assets/backgrounds/backrooms/background.png" id="6_1rhdn"]
-[ext_resource type="Texture2D" uid="uid://cgso32u8m2kp2" path="res://assets/backgrounds/backrooms/ground.png" id="7_sjxhf"]
 [ext_resource type="Texture2D" uid="uid://d1xdb8iawgttp" path="res://assets/characters/Walkingsergent/frame0000.png" id="8_ftc2p"]
 [ext_resource type="Texture2D" uid="uid://vfxrgc1ckfl2" path="res://assets/backgrounds/backrooms/foreground.png" id="8_ko0rf"]
 [ext_resource type="Texture2D" uid="uid://bc7q852oeqqow" path="res://assets/characters/Walkingsergent/frame0001.png" id="9_04n4k"]
@@ -30,6 +27,10 @@
 [ext_resource type="Texture2D" uid="uid://bbyhw2pax2ajx" path="res://assets/characters/Walkingsergent/frame0019.png" id="27_0mlv0"]
 [ext_resource type="Texture2D" uid="uid://dapml8u0lept8" path="res://assets/characters/Walkingsergent/frame0020.png" id="28_f4abt"]
 [ext_resource type="Texture2D" uid="uid://c83338eqfm23g" path="res://assets/characters/Walkingsergent/frame0021.png" id="29_ctbwf"]
+[ext_resource type="Texture2D" uid="uid://bvkr8wj8en6m" path="res://assets/backgrounds/backrooms/gsbackground.png" id="gs_back"]
+[ext_resource type="Texture2D" uid="uid://dy38u1j3i1vuu" path="res://assets/backgrounds/backrooms/gsground.png" id="gs_ground"]
+[ext_resource type="Texture2D" uid="uid://cih34wtygdba0" path="res://assets/backgrounds/backrooms/gssoild_mountainsky.png" id="gs_mountain"]
+[ext_resource type="Texture2D" uid="uid://cj20x2tjdrt5j" path="res://assets/backgrounds/backrooms/gsTrees.png" id="gs_trees"]
 [ext_resource type="Texture2D" uid="uid://7kcu2utywl2t" path="res://assets/characters/Japanwalk/frame0000.png" id="Guard_f00"]
 [ext_resource type="Texture2D" uid="uid://bk0vdby277o4" path="res://assets/characters/Japanwalk/frame0001.png" id="Guard_f01"]
 [ext_resource type="Texture2D" uid="uid://cyyc15gq1sjwl" path="res://assets/characters/Japanwalk/frame0002.png" id="Guard_f02"]
@@ -441,8 +442,7 @@ pace_lines = Array[String](["Keep moving. Do not fall behind.", "The man ahead o
 unique_name_in_owner = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Mountain" unique_id=680946806]
-position = Vector2(-320, 0)
-texture = ExtResource("5_dc040")
+texture = ExtResource("gs_mountain")
 centered = false
 
 [node name="BackBG" type="Parallax2D" parent="." unique_id=355245407]
@@ -451,7 +451,16 @@ repeat_size = Vector2(1280, 0)
 autoscroll = Vector2(-12, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="BackBG" unique_id=815442882]
-texture = ExtResource("6_1rhdn")
+texture = ExtResource("gs_back")
+centered = false
+
+[node name="Trees" type="Parallax2D" parent="." unique_id=1308775539]
+unique_name_in_owner = true
+repeat_size = Vector2(1280, 0)
+autoscroll = Vector2(-16, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Trees" unique_id=166892233]
+texture = ExtResource("gs_trees")
 centered = false
 
 [node name="BG" type="Parallax2D" parent="." unique_id=2131159710]
@@ -460,7 +469,7 @@ repeat_size = Vector2(1280, 0)
 autoscroll = Vector2(-20, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="BG" unique_id=658009485]
-texture = ExtResource("7_sjxhf")
+texture = ExtResource("gs_ground")
 centered = false
 
 [node name="CharactersAndUI" type="Node2D" parent="." unique_id=608258958]

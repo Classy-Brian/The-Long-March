@@ -1,4 +1,4 @@
-# The Long March
+# The Long Walk
 
 Filipino Horror Game Jam 2026 entry: A survival decision game set during the Bataan Death March (April 1942), Oregon Trail–inspired, built in Godot 4.
 

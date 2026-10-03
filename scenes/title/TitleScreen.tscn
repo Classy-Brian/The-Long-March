@@ -1,18 +1,9 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_title"]
-[ext_resource type="Texture2D" uid="uid://dwj6wqopfj3kj" path="res://assets/backgrounds/backrooms/soild_mountainsky.png" id="bg_Mountain"]
-[ext_resource type="Texture2D" uid="uid://s64ge6j25pg8" path="res://assets/backgrounds/backrooms/background.png" id="bg_BackBG"]
-[ext_resource type="Texture2D" uid="uid://cgso32u8m2kp2" path="res://assets/backgrounds/backrooms/ground.png" id="bg_BG"]
-[ext_resource type="Texture2D" uid="uid://d1xdb8iawgttp" path="res://assets/characters/Walkingsergent/frame0000.png" id="bg_Sergeant"]
-[ext_resource type="Texture2D" uid="uid://vfxrgc1ckfl2" path="res://assets/backgrounds/backrooms/foreground.png" id="bg_Foreground"]
-[ext_resource type="Texture2D" uid="uid://cx2d1m6mnp1c2" path="res://assets/UI/desicion_backdrop.png" id="ui_slab"]
+[ext_resource type="Texture2D" uid="uid://06ax265veggw" path="res://assets/titlescreen.png" id="2_art"]
 [ext_resource type="Texture2D" uid="uid://b2ak6kuaxiwbi" path="res://assets/UI/start.png" id="ui_start"]
 [ext_resource type="Texture2D" uid="uid://brexjymkqfmjk" path="res://assets/UI/startselected.png" id="ui_start_sel"]
-
-[sub_resource type="AtlasTexture" id="Atlas_card"]
-atlas = ExtResource("ui_slab")
-region = Rect2(79, 98, 476, 291)
 
 [sub_resource type="AtlasTexture" id="Atlas_start"]
 atlas = ExtResource("ui_start")
@@ -31,95 +22,38 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_title")
 
-[node name="Mountain" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = -320.0
-offset_right = 960.0
-offset_bottom = 480.0
-mouse_filter = 2
-texture = ExtResource("bg_Mountain")
-expand_mode = 1
-
-[node name="BackBG" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 0.0
-offset_right = 1280.0
-offset_bottom = 480.0
-mouse_filter = 2
-texture = ExtResource("bg_BackBG")
-expand_mode = 1
-
-[node name="BG" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 0.0
-offset_right = 1280.0
-offset_bottom = 480.0
-mouse_filter = 2
-texture = ExtResource("bg_BG")
-expand_mode = 1
-
-[node name="Sergeant" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 0.0
-offset_right = 640.0
-offset_bottom = 480.0
-mouse_filter = 2
-texture = ExtResource("bg_Sergeant")
-expand_mode = 1
-
-[node name="Foreground" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 0.0
-offset_right = 1280.0
-offset_bottom = 480.0
-mouse_filter = 2
-texture = ExtResource("bg_Foreground")
-expand_mode = 1
-
-[node name="Card" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 196.0
-offset_top = 152.0
-offset_right = 626.0
-offset_bottom = 472.0
-mouse_filter = 2
-texture = SubResource("Atlas_card")
-expand_mode = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="Card"]
+[node name="Art" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 26
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 26
+mouse_filter = 2
+texture = ExtResource("2_art")
+expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Card/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 290.0
+offset_right = 640.0
+offset_bottom = 470.0
+theme_override_constants/separation = 8
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="Card/MarginContainer/VBoxContainer"]
+[node name="SubtitleLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "THE LONG MARCH"
-horizontal_alignment = 1
-
-[node name="SubtitleLabel" type="Label" parent="Card/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.75, 0.75, 0.75, 1)
+theme_override_colors/font_color = Color(0.92, 0.92, 0.92, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 14
 text = "Bataan, Philippines - April 1942
 Based on real events."
 horizontal_alignment = 1
 
-[node name="StartButton" type="TextureButton" parent="Card/MarginContainer/VBoxContainer"]
+[node name="StartButton" type="TextureButton" parent="VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(168, 100)
+custom_minimum_size = Vector2(150, 90)
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = SubResource("Atlas_start")

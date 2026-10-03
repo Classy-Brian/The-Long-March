@@ -49,6 +49,12 @@ func _process(delta: float) -> void:
 func _on_text_changed(new_text: String) -> void:
 	if _finished:
 		return
+	if target_text.begins_with(new_text):
+		# Typewriter key: random pitch so no two keys sound the same.
+		Sfx.play("type", -3.0, randf_range(0.9, 1.25))
+	else:
+		# Wrong key: same click, pitched way down - a dull thunk.
+		Sfx.play("type", 0.0, 0.55)
 	if new_text == target_text:
 		_finish(true)
 	elif not target_text.begins_with(new_text):

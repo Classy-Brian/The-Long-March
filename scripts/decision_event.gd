@@ -2,7 +2,7 @@ extends Resource
 class_name DecisionEvent
 
 ## One decision-point event. Each event is a filled-in .tres file
-## using this as its blueprint - same pattern as Soldier.
+## using this as its blueprint
 
 @export_multiline var prompt_text: String = ""
 @export var death_cause: String = ""

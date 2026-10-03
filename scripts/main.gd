@@ -8,7 +8,7 @@ const DEATH_SCENE: PackedScene = preload("res://scenes/death/DeathCutscene.tscn"
 @export var events: Array[DecisionEvent] = []
 @export var pace_lines: Array[String] = []
 
-@onready var parallax_layers: Array[Parallax2D] = [%Mountain, %BackBG, %BG, %Foreground]
+@onready var parallax_layers: Array[Parallax2D] = [%Mountain, %BackBG, %Trees, %BG, %Foreground]
 @onready var ui_layer: CanvasLayer = %UILayer
 @onready var health_label: Label = %HealthLabel
 @onready var hydration_label: Label = %HydrationLabel
@@ -67,6 +67,7 @@ func _on_decision_made() -> void:
 		_set_marching(true)
 
 func _set_marching(marching: bool) -> void:
+	Sfx.set_footsteps(marching)
 	for layer in parallax_layers:
 		layer.process_mode = Node.PROCESS_MODE_INHERIT if marching else Node.PROCESS_MODE_DISABLED
 	for walker in walkers:
