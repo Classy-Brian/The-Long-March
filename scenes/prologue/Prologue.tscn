@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://cjdiduvenxq4v"]
+
+[ext_resource type="Script" uid="uid://dac6tfmxv7h18" path="res://scripts/prologue.gd" id="1_prologue"]
+[ext_resource type="Texture2D" uid="uid://iq1myjym57mx" path="res://assets/prologue.png" id="2_paper"]
+[ext_resource type="FontFile" uid="uid://cp4fmpngipd82" path="res://assets/fonts/Courier_Prime/CourierPrime-Bold.ttf" id="3_bold"]
+
+[node name="Prologue" type="Control" unique_id=266796137]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_prologue")
+pages = Array[String](["April 9, 1942.
+Bataan Peninsula.", "Cut off. No naval support. No air support.
+
+For three months, combined American and Filipino forces held the jungle.", "They fought on quarter rations.
+
+They fought through malaria, dysentery, and starvation.", "But flesh and bone have limits.
+
+Realizing his men were physically broken, Major General Edward P. King issued the unthinkable order.
+
+*Surrender.*", "75,000 soldiers were handed over to the Imperial Japanese Army.
+
+Over 60,000 Filipinos.
+
+Over 10,000 Americans.", "They dropped their weapons, believing the worst of the suffering was over.
+
+*They were wrong.*"])
+chars_per_second = 20.0
+slow_chars_per_second = 12.0
+type_pitch_min = 0.5
+type_pitch_max = 0.65
+
+[node name="Backdrop" type="ColorRect" parent="." unique_id=1014880601]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.06, 0.06, 0.06, 1)
+
+[node name="Art" type="TextureRect" parent="." unique_id=1429830278]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_paper")
+expand_mode = 1
+
+[node name="TextLabel" type="Label" parent="." unique_id=12723138]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 145.0
+offset_top = 118.0
+offset_right = 500.0
+offset_bottom = 358.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.9, 0.88, 0.86, 0.85)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_bold")
+theme_override_font_sizes/font_size = 17
+text = "Prologue text"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="HintLabel" type="Label" parent="." unique_id=1558759684]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 145.0
+offset_top = 362.0
+offset_right = 500.0
+offset_bottom = 390.0
+theme_override_colors/font_color = Color(0.05, 0.05, 0.05, 1)
+theme_override_colors/font_outline_color = Color(0.9, 0.88, 0.86, 0.85)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_bold")
+theme_override_font_sizes/font_size = 13
+text = "click to continue"
+horizontal_alignment = 1

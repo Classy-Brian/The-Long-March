@@ -2,7 +2,7 @@ extends Control
 
 ## Title screen: Start begins a fresh march.
 
-const MAIN_SCENE := "res://scenes/main/Main.tscn"
+const MAIN_SCENE := "res://scenes/prologue/Prologue.tscn"  # prologue, then the march
 
 @onready var start_button: TextureButton = %StartButton
 
