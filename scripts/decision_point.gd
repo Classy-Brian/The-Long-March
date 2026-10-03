@@ -14,7 +14,7 @@ func _ready() -> void:
 	if event == null:
 		push_warning("DecisionPoint has no event assigned.")
 		return
-	prompt_label.text = event.prompt_text
+	prompt_label.text = event.prompt_text.replace("\r", "")
 	choice_a_button.text = event.a_text
 	choice_b_button.text = event.b_text
 	choice_a_button.pressed.connect(_on_choice_a_button_pressed)
@@ -48,7 +48,7 @@ func _roll(chance: float) -> bool:
 	return randf() * 100.0 < chance
 
 func _show_result(text: String) -> void:
-	prompt_label.text = text
+	prompt_label.text = text.replace("\r", "")
 	choice_a_button.hide()
 	choice_b_button.hide()
 	continue_button.show()

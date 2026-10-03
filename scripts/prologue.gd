@@ -78,6 +78,9 @@ func _build_page(raw: String) -> void:
 	var shown := ""
 	_delays.clear()
 	var slow := false
+	# Windows line endings sneak in "\r" characters, which Godot draws
+	# as an extra line break. Strip them so blank lines stay single.
+	raw = raw.replace("\r", "")
 	for c in raw:
 		if c == "*":
 			slow = not slow
