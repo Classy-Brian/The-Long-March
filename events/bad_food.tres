@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_3hg6l")
 order = 32
-prompt_text = "One of your private was found with possible Japanese souvenir ffrom the war. This angered the guards and they prepare to behead him for it. "
+prompt_text = "One of your private was found with possible Japanese souvenir from the war. This angered the guards and they prepare to behead him for it. "
 death_cause = "Stabbed by Guard"
 a_text = "Rush in to defend your men."
 a_success_chance = 20.0

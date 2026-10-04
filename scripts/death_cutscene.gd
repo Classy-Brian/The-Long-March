@@ -49,7 +49,7 @@ func _ready() -> void:
 
 func _pick_sequence(text: String) -> String:
 	var t := text.to_lower()
-	if "dysentery" in t or "sick" in t:
+	if "dysent" in t or "sick" in t or "poison" in t:
 		return "dysentery"
 	if "dehydrat" in t or "heat" in t or "thirst" in t:
 		return "heat"
