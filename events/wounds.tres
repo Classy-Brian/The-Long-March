@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="DecisionEvent" format=3 uid="uid://bgg6s7awmhfnx"]
+
+[ext_resource type="Script" uid="uid://d33a7xio2g6x8" path="res://scripts/decision_event.gd" id="1_tpl"]
+
+[resource]
+script = ExtResource("1_tpl")
+order = 99
+prompt_text = "The wounds you sustain in the your last fight is making it hard to walk. "
+death_cause = "Bleed to death."
+a_text = "Ask your privates for help"
+a_success_chance = 50.0
+a_success_result = "They helped you stablize the wound and held you up to walk with them."
+a_success_health = 40.0
+a_success_morale = 30.0
+a_failure_result = "Your private wasn't able to help. The guards pushed you forward and you were forced to endure the pain."
+a_failure_health = -20.0
+b_text = "Treat the wound for spare cloth."
+b_success_chance = 50.0
+b_success_result = "You were able to stablize the wound and keep going. "
+b_success_health = 40.0
+b_failure_result = "You were unsuccessful and infected your wound."
+b_failure_health = -20.0

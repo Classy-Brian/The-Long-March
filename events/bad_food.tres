@@ -4,18 +4,18 @@
 
 [resource]
 script = ExtResource("1_3hg6l")
-order = 30
-prompt_text = "One of your private was found with possible Japanese souvenir from the battle of Batan. This angered the guards and they prepare to behead him for it. "
+order = 32
+prompt_text = "One of your private was found with possible Japanese souvenir ffrom the war. This angered the guards and they prepare to behead him for it. "
 death_cause = "Stabbed by Guard"
 a_text = "Rush in to defend your men."
 a_success_chance = 20.0
 a_success_result = "The Japanese guards calm down. Instead of killing the private, they cut off the man's fingers as punishment and move on."
-a_success_morale = 60.0
+a_success_morale = 45.0
 a_failure_result = "The Japanese guards turn their anger towards you for defending your men. Pull out their Gunto and aim to cut off your limbs too. "
 a_failure_health = -75.0
 a_failure_morale = -30.0
 b_text = "Keep walking. Do not anger the guards."
 b_success_result = "You watch as the Japanese guards pushes your private down to his knees. They swing the gunto at his neck. Blood spattered everywhere but it was not enough to instantly kill him. They hack at his neck until the head is ripped from his body. "
-b_success_morale = -40.0
+b_success_morale = -45.0
 b_failure_result = "wahwahwahwahawh"
 metadata/_custom_type_script = "uid://d33a7xio2g6x8"

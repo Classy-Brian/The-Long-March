@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DecisionEvent" format=3 uid="uid://dipu5rud7eqm2"]
+[gd_resource type="Resource" script_class="DecisionEvent" format=3 uid="uid://iqs6ef14cnsy"]
 
 [ext_resource type="Script" uid="uid://d33a7xio2g6x8" path="res://scripts/decision_event.gd" id="1_tpl"]
 
@@ -6,13 +6,11 @@
 script = ExtResource("1_tpl")
 order = 99
 prompt_text = "TEMPLATE - right-click this file > Duplicate, rename it (no _ at the start), then fill it in. Describe the situation here."
-a_text = "Ignore the bottle."
-a_success_chance = 75.0
-a_success_health = 5.0
-a_success_hydration = 70.0
-a_success_morale = 30.0
-a_failure_health = -10.0
-a_failure_morale = -5.0
+death_cause = "Shown if this event kills you. Keywords pick the cutscene: guard / beaten / shot, dysentery / sick, heat / thirst, truck."
+a_text = "Choice A button text"
+a_success_chance = 50.0
+a_success_result = "What happens if A works."
+a_failure_result = "What happens if A fails."
 b_text = "Choice B button text"
 b_success_result = "What happens if B works."
 b_failure_result = "What happens if B fails (only possible if B's chance is under 100)."

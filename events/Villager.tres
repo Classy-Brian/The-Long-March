@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="DecisionEvent" format=3 uid="uid://vxrg2v44p20i"]
+
+[ext_resource type="Script" uid="uid://d33a7xio2g6x8" path="res://scripts/decision_event.gd" id="1_tpl"]
+
+[resource]
+script = ExtResource("1_tpl")
+order = 99
+prompt_text = "A local villager secretly threw a bottle of sugar cane juice your way. "
+death_cause = "Died from Dehydration"
+a_text = "Take the bottle."
+a_success_chance = 74.719
+a_success_result = "You were able to hide the bottle from the Guards and keep going. "
+a_success_health = 5.0
+a_success_hydration = 70.0
+a_success_morale = 30.0
+a_failure_result = "The Guards found you with the bottle and beat you for keeping it. They drank the whole bottle infront of you."
+a_failure_health = -10.0
+a_failure_morale = -5.0
+b_text = "Ignore the bottle."
+b_success_result = "You walk past. Your tongue is thick with dust."
+b_success_hydration = -5.0
+b_success_morale = -5.0
+b_failure_result = "What happens if B fails (only possible if B's chance is under 100)."

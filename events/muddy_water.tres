@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="DecisionEvent" format=3 uid="uid://bt7d1v8d11o4b"]
+
+[ext_resource type="Script" uid="uid://d33a7xio2g6x8" path="res://scripts/decision_event.gd" id="1_tpl"]
+
+[resource]
+script = ExtResource("1_tpl")
+order = 2
+prompt_text = "You stumble upon a puddle of water in the road. It's filled with animal droppings and bugs. "
+death_cause = "Dysentry."
+a_text = "Drink the puddle."
+a_success_chance = 50.0
+a_success_result = "You were able to quench your thirst for now."
+a_success_hydration = 30.0
+a_success_morale = 5.0
+a_failure_result = "You felt a sharp pain in your abdomen and you puked over to the side of the path."
+a_failure_health = -20.0
+a_failure_hydration = -5.0
+a_failure_morale = -10.0
+b_text = "Step around it."
+b_success_result = "You walk past. Your tongue is thick with dust."
+b_failure_result = "What happens if B fails (only possible if B's chance is under 100)."
